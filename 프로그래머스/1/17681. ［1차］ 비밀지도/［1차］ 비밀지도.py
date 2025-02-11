@@ -1,3 +1,4 @@
+### 내 풀이
 def solution(n, arr1, arr2):
     answer = []
     a1 = []
@@ -27,4 +28,15 @@ def solution(n, arr1, arr2):
         #print(s)
         answer.append(s)
     
+    return answer
+
+### 더 간단한 풀이
+
+def solution(n, arr1, arr2):
+    answer = []
+    for i in range(n):
+        num = bin(arr1[i] | arr2[i]) # 그냥 처음부터 or 해서 2진법으로
+        num = num[2:].zfill(n) # 예를 들어, 1을 00001로 채워넣기. (공백을 0으로)
+        num = num.replace('1', '#').replace('0', ' ')
+        answer.append(num)
     return answer
