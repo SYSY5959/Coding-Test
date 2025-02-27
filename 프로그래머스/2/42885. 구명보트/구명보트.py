@@ -1,3 +1,5 @@
+### 탐욕법 알고리즘 -> 공부 더 필요!!!
+
 def solution(people, limit) :
     answer = 0
     people.sort()
