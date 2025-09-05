@@ -1,7 +1,8 @@
 from collections import deque
-def bfs(s,x,n,v):
+def bfs(s,x,n):
     q = deque()
     q.append(s)
+    v = {}
     v[s] = 1
 
     while q:
@@ -15,14 +16,11 @@ def bfs(s,x,n,v):
             next_lst.append(c//3)
 
         for ne in next_lst:
-            if ne>0 and v.get(ne,0)==0:
+            if ne>0 and v.get(ne,0)==0: # dict쓸 떄 조심!!!
                 v[ne] = v[c]+1
                 q.append(ne)
     return -1
 
 def solution(x, y, n):
-
-    v = {}
-    answer = bfs(y,x,n,v)
-    
+    answer = bfs(y,x,n)
     return answer
