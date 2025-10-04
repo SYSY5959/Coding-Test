@@ -7,7 +7,9 @@ def solution(babbling):
         if any(char in b for char in lst2):
             continue
             
-        # lst안에 있는 원소들 있으면, 다 삭제하고(공백으로 대체)
+        # lst안에 있는 원소들 있으면, 다 삭제하고 (공백!!으로 대체)
+        # 여기서 그냥 ''로 대체해버리면, 'wyeoo' -> 'woo' -> '' 이런 문제 발생. 
+        # 그래서 ' '이나 '@' 이런 특수문자로 치환하는게 안전!
         for l in lst:
             b = b.replace(l," ")
         # 최종 문자열이 공백 제거 후에 ''이면 발음할 수 있는 단어
